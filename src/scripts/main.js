@@ -131,7 +131,6 @@ function updateTaskStatus(taskId) {
   const taskItem = tasks.find((task) => task.id === taskId);
 
   taskItem.completed = !taskItem.completed
-
   updateCompletedTasksQuantity();
 
   localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
