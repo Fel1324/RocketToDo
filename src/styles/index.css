@@ -1,0 +1,54 @@
+@import url("./layout/header.css");
+@import url("./layout/main.css");
+@import url("./tasks/tasks-header.css");
+@import url("./tasks/tasks-body.css");
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;    
+}
+
+:root {  
+  --color-blue-dark: #1E6F9F;
+  --color-blue: #4EA8DE;
+  --color-purple-dark: #5E60CE;
+  --color-purple: #8284FA;
+  --color-gray-700: #0D0D0D;
+  --color-gray-600: #1A1A1A;
+  --color-gray-500: #262626;
+  --color-gray-400: #333333;
+  --color-gray-300: #808080;
+  --color-gray-200: #D9D9D9;
+  --color-gray-100: #F2F2F2;
+  --color-danger: #E25858;
+
+  --font-sans: "Inter", sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  background-color: var(--color-gray-600);
+  color: var(--color-gray-100);
+}
+
+img {
+  vertical-align: top;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}

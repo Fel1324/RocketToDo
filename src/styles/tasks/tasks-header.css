@@ -1,0 +1,33 @@
+#tasks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    & > p {
+      font-size: .875rem;
+      font-weight: 700;
+    }
+
+    &:first-child > p {
+      color: var(--color-blue);
+    }
+
+    &:last-child > p {
+      color: var(--color-purple);
+    }
+
+    & > span {
+      padding: .125rem .5rem;
+      background-color: var(--color-gray-400);
+      border-radius: 62.4375rem;
+      font-weight: 700;
+      font-size: .75rem;
+    }
+  }
+}
