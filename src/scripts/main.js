@@ -51,7 +51,7 @@ createTaskFormEl.onsubmit = (event) => {
   const newTask = {
     id: generateTaskId(),
     title: createTaskInputEl.value,
-    status: "uncompleted"
+    completed: false
   }
 
   addTask(newTask);
@@ -96,13 +96,12 @@ function addTask(newTask) {
     tasksListEl.appendChild(taskItemLi);
 
     tasks.push(newTask);
+
     updateCreatedTasksQuantity();
     updateCompletedTasksQuantity();
 
     taskItemCheckbox.oninput = () => updateTaskStatus(newTask.id);
-    if(newTask.status === "completed") {
-      taskItemCheckbox.checked = true;
-    }
+    newTask.completed ? taskItemCheckbox.checked = true : taskItemCheckbox.checked = false;
 
     localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
 
@@ -131,11 +130,7 @@ function deleteTask(taskId) {
 function updateTaskStatus(taskId) {
   const taskItem = tasks.find((task) => task.id === taskId);
 
-  if(taskItem.status === "uncompleted") {
-    taskItem.status = "completed"
-  } else {
-    taskItem.status = "uncompleted"
-  }
+  taskItem.completed = !taskItem.completed
 
   updateCompletedTasksQuantity();
 
@@ -143,7 +138,7 @@ function updateTaskStatus(taskId) {
 }
 
 function updateCompletedTasksQuantity() {
-  const filteredTasksByStatusCompleted = tasks.filter((task) => task.status === "completed");
+  const filteredTasksByStatusCompleted = tasks.filter((task) => task.completed === true);
 
   tasks.length > 0 ? 
   completedTasksQuantity.textContent = `${filteredTasksByStatusCompleted.length} de ${tasks.length}` :
