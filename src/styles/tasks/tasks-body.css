@@ -44,7 +44,6 @@
     border: .125rem solid var(--color-blue);
     width: 1.125rem;
     height: 1.125rem;
-    margin-top: .125rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
